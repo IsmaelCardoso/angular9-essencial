@@ -14,6 +14,8 @@ import { RedDirective } from './directives/red.directive';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button"
+
 import { HomeComponent } from './views/home/home.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { ForDirective } from './directives/for.directive';
@@ -39,6 +41,7 @@ import { ProductsCreateComponent } from './components/products/products-create/p
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
