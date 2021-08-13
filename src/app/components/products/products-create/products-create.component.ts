@@ -9,7 +9,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./products-create.component.css']
 })
 export class ProductsCreateComponent implements OnInit {
-  product: ProductModel = {
+  product: Omit<ProductModel, "id"> = {
     name: "",
     price: null,
   }
@@ -21,7 +21,7 @@ export class ProductsCreateComponent implements OnInit {
   ngOnInit(): void { }
 
   createProduct(): void {
-    const result = this.productService.create(this.product).subscribe(() => {
+    const result = this.productService.create(this.product as ProductModel).subscribe(() => {
       this.productService.showMessage("Product created!!");
       this.router.navigate(['/products']);
     });
