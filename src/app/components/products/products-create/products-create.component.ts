@@ -11,18 +11,18 @@ import { ProductService } from '../product.service';
 export class ProductsCreateComponent implements OnInit {
   product: ProductModel = {
     name: "",
-    price: 0,
+    price: null,
   }
 
-  constructor(private productServece: ProductService, private router: Router) {
+  constructor(private productService: ProductService, private router: Router) {
 
   }
 
   ngOnInit(): void { }
 
   createProduct(): void {
-    const result = this.productServece.create(this.product).subscribe(() => {
-      this.productServece.showMessage("Product created!!");
+    const result = this.productService.create(this.product).subscribe(() => {
+      this.productService.showMessage("Product created!!");
       this.router.navigate(['/products']);
     });
   }
